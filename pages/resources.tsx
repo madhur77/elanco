@@ -16,8 +16,8 @@ type Tresources = {
 }
 
 const Resources = ({ ...props }: Tresources): React.ReactElement => {
-  const [data, setData] = useState<ApplicationResponse | null>(null)
-  const [resourceName, setResourceName] = useState<string>()
+    const [data, setData] = useState<ApplicationResponse | null>(null)
+    const [resourceName, setResourceName] = useState<string>()
     const selectApplication = async (name) => {
         const res = await fetch(
             'https://engineering-task.elancoapps.com/api/resources/' + name
@@ -28,6 +28,9 @@ const Resources = ({ ...props }: Tresources): React.ReactElement => {
     }
     return (
         <div>
+            <p>
+                <center>Click on the application to see stats</center>
+            </p>
             <div style={{ display: 'inline-block' }}>
                 <ul>
                     {props.resources.map((project) => (
